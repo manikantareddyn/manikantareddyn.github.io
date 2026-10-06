@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Manikanta Reddy Nanchary — Data Center Infrastructure &amp; Cybersecurity Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0a0e14;
+    --bg2: #0f1520;
+    --bg3: #141c2b;
+    --border: rgba(0,255,180,0.12);
+    --border2: rgba(0,255,180,0.25);
+    --accent: #00ffb4;
+    --accent2: #00c9ff;
+    --accent3: #7b61ff;
+    --text: #c9d6e8;
+    --text2: #8899ae;
+    --text3: #5a6a7a;
+    --heading: #eaf2ff;
+    --card: #0f1520;
+    --card2: #141c2b;
+    --tag-bg: rgba(0,255,180,0.08);
+    --tag-border: rgba(0,255,180,0.2);
+    --tag-text: #00ffb4;
+    --red: #ff4757;
+    --yellow: #ffd32a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar{width:5px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:rgba(0,255,180,0.3);border-radius:3px}
+
+  /* ── NAV ── */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1rem 3rem;
+    background:rgba(10,14,20,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-logo{
+    font-family:'Space Mono',monospace;
+    font-size:1rem;
+    color:var(--accent);
+    letter-spacing:0.04em;
+  }
+  .nav-links{display:flex;gap:1.8rem;list-style:none}
+  .nav-links a{
+    font-size:0.82rem;
+    color:var(--text2);
+    text-decoration:none;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    transition:color 0.2s;
+  }
+  .nav-links a:hover{color:var(--accent)}
+
+  /* ── SECTIONS ── */
+  section{padding:6rem 0;position:relative}
+  .container{max-width:1020px;margin:0 auto;padding:0 2rem}
+
+  /* ── HERO ── */
+  #hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    padding-top:5rem;
+    position:relative;overflow:hidden;
+  }
+  #hero::before{
+    content:'';
+    position:absolute;top:-200px;right:-200px;
+    width:600px;height:600px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,255,180,0.05) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  #hero::after{
+    content:'';
+    position:absolute;bottom:-100px;left:-100px;
+    width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle,rgba(0,201,255,0.04) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .hero-pre{
+    font-family:'Space Mono',monospace;
+    font-size:0.82rem;
+    color:var(--accent);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:1.2rem;
+    display:flex;align-items:center;gap:0.6rem;
+  }
+  .hero-pre::before{content:'';display:block;width:32px;height:1px;background:var(--accent)}
+  h1.hero-name{
+    font-family:'DM Sans',sans-serif;
+    font-size:clamp(2.6rem,6vw,4.2rem);
+    font-weight:600;
+    color:var(--heading);
+    line-height:1.1;
+    margin-bottom:0.4rem;
+  }
+  .hero-role{
+    font-size:clamp(1.1rem,2.5vw,1.5rem);
+    color:var(--accent2);
+    font-weight:300;
+    margin-bottom:1.6rem;
+    font-family:'Space Mono',monospace;
+  }
+  .hero-desc{
+    max-width:600px;
+    color:var(--text2);
+    font-size:1rem;
+    line-height:1.8;
+    margin-bottom:2.2rem;
+  }
+  .hero-badges{
+    display:flex;flex-wrap:wrap;gap:0.7rem;
+    margin-bottom:2.4rem;
+  }
+  .badge{
+    font-family:'Space Mono',monospace;
+    font-size:0.72rem;
+    padding:0.35rem 0.9rem;
+    border-radius:2rem;
+    background:var(--tag-bg);
+    border:1px solid var(--tag-border);
+    color:var(--tag-text);
+    letter-spacing:0.04em;
+  }
+  .badge.blue{
+    background:rgba(0,201,255,0.08);
+    border-color:rgba(0,201,255,0.2);
+    color:var(--accent2);
+  }
+  .badge.purple{
+    background:rgba(123,97,255,0.1);
+    border-color:rgba(123,97,255,0.25);
+    color:#a590ff;
+  }
+  .badge.orange{
+    background:rgba(255,147,36,0.1);
+    border-color:rgba(255,147,36,0.25);
+    color:#ff9324;
+  }
+  .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-primary{
+    display:inline-block;
+    padding:0.7rem 1.8rem;
+    background:var(--accent);
+    color:#050a0f;
+    font-weight:600;
+    font-size:0.88rem;
+    border-radius:4px;
+    text-decoration:none;
+    letter-spacing:0.04em;
+    transition:opacity 0.2s,transform 0.15s;
+  }
+  .btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+  .btn-outline{
+    display:inline-block;
+    padding:0.7rem 1.8rem;
+    border:1px solid var(--border2);
+    color:var(--accent);
+    font-weight:500;
+    font-size:0.88rem;
+    border-radius:4px;
+    text-decoration:none;
+    letter-spacing:0.04em;
+    transition:background 0.2s,transform 0.15s;
+  }
+  .btn-outline:hover{background:var(--tag-bg);transform:translateY(-1px)}
+
+  /* ── SECTION HEADERS ── */
+  .section-label{
+    font-family:'Space Mono',monospace;
+    font-size:0.72rem;
+    color:var(--accent);
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    margin-bottom:0.6rem;
+    display:flex;align-items:center;gap:0.6rem;
+  }
+  .section-label::before{content:'';display:block;width:24px;height:1px;background:var(--accent)}
+  h2.section-title{
+    font-size:clamp(1.6rem,3vw,2.2rem);
+    font-weight:600;
+    color:var(--heading);
+    margin-bottom:0.5rem;
+  }
+  .section-line{
+    width:48px;height:2px;
+    background:linear-gradient(90deg,var(--accent),transparent);
+    margin-bottom:3rem;
+    border-radius:2px;
+  }
+
+  /* ── ABOUT / STATS ── */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .about-text p{color:var(--text2);margin-bottom:1rem;font-size:0.97rem}
+  .about-text p span{color:var(--accent);font-weight:500}
+  .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .stat-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:1.4rem 1.2rem;
+    text-align:center;
+    transition:border-color 0.2s;
+  }
+  .stat-card:hover{border-color:var(--border2)}
+  .stat-number{
+    font-family:'Space Mono',monospace;
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--accent);
+    display:block;
+  }
+  .stat-label{font-size:0.78rem;color:var(--text3);margin-top:0.2rem;letter-spacing:0.04em}
+  @media(max-width:700px){
+    .about-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr}
+  }
+
+  /* ── SKILLS ── */
+  .skills-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+  .skill-group{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:1.4rem;
+    transition:border-color 0.2s,transform 0.2s;
+  }
+  .skill-group:hover{border-color:var(--border2);transform:translateY(-2px)}
+  .skill-group-title{
+    font-family:'Space Mono',monospace;
+    font-size:0.75rem;
+    color:var(--accent);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:1rem;
+    padding-bottom:0.6rem;
+    border-bottom:1px solid var(--border);
+  }
+  .skill-tags{display:flex;flex-wrap:wrap;gap:0.5rem}
+  .stag{
+    font-size:0.78rem;
+    padding:0.25rem 0.7rem;
+    border-radius:3px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.06);
+    color:var(--text2);
+  }
+  .stag.accent{background:var(--tag-bg);border-color:var(--tag-border);color:var(--tag-text)}
+  .stag.blue{background:rgba(0,201,255,0.07);border-color:rgba(0,201,255,0.15);color:#6dd5ff}
+  .stag.purple{background:rgba(123,97,255,0.08);border-color:rgba(123,97,255,0.18);color:#b5a3ff}
+  .stag.orange{background:rgba(255,147,36,0.08);border-color:rgba(255,147,36,0.18);color:#ff9324}
+
+  /* ── EXPERIENCE ── */
+  .timeline{position:relative;padding-left:1.8rem}
+  .timeline::before{
+    content:'';
+    position:absolute;left:0;top:0;bottom:0;
+    width:1px;background:var(--border);
+  }
+  .timeline-item{
+    position:relative;
+    margin-bottom:2.8rem;
+  }
+  .timeline-item::before{
+    content:'';
+    position:absolute;left:-1.8rem;top:0.4rem;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px rgba(0,255,180,0.15);
+    transform:translateX(-4px);
+  }
+  .tl-header{margin-bottom:0.6rem}
+  .tl-role{
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--heading);
+  }
+  .tl-company{
+    font-family:'Space Mono',monospace;
+    font-size:0.78rem;
+    color:var(--accent);
+    margin-top:0.15rem;
+  }
+  .tl-meta{
+    display:flex;gap:1rem;flex-wrap:wrap;
+    font-size:0.78rem;
+    color:var(--text3);
+    margin:0.4rem 0 0.8rem;
+    font-family:'Space Mono',monospace;
+  }
+  .tl-badge{
+    padding:0.15rem 0.6rem;
+    border-radius:2rem;
+    font-size:0.68rem;
+    background:rgba(0,255,180,0.07);
+    border:1px solid rgba(0,255,180,0.15);
+    color:var(--accent);
+  }
+  .tl-badge.onsite{
+    background:rgba(0,201,255,0.07);
+    border-color:rgba(0,201,255,0.15);
+    color:var(--accent2);
+  }
+  ul.tl-list{
+    list-style:none;
+    padding:0;
+  }
+  ul.tl-list li{
+    color:var(--text2);
+    font-size:0.92rem;
+    padding:0.25rem 0 0.25rem 1.1rem;
+    position:relative;
+    line-height:1.65;
+  }
+  ul.tl-list li::before{
+    content:'▸';
+    position:absolute;left:0;top:0.25rem;
+    color:var(--accent);font-size:0.7rem;
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+  .project-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:1.6rem;
+    display:flex;flex-direction:column;
+    transition:border-color 0.2s,transform 0.2s;
+    position:relative;overflow:hidden;
+  }
+  .project-card::before{
+    content:'';
+    position:absolute;top:0;left:0;right:0;
+    height:2px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    opacity:0;
+    transition:opacity 0.2s;
+  }
+  .project-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+  .project-card:hover::before{opacity:1}
+  .project-title{
+    font-size:1rem;font-weight:600;
+    color:var(--heading);margin-bottom:0.3rem;
+  }
+  .project-tech{
+    font-family:'Space Mono',monospace;
+    font-size:0.7rem;color:var(--accent2);
+    margin-bottom:0.8rem;letter-spacing:0.04em;
+  }
+  .project-desc{
+    color:var(--text2);
+    font-size:0.88rem;line-height:1.65;
+    flex:1;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:1.8rem 2rem;
+    display:flex;gap:2rem;align-items:flex-start;
+    transition:border-color 0.2s;
+  }
+  .edu-card:hover{border-color:var(--border2)}
+  .edu-icon{
+    width:52px;height:52px;border-radius:10px;
+    background:var(--tag-bg);border:1px solid var(--tag-border);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    font-family:'Space Mono',monospace;
+    font-size:0.75rem;color:var(--accent);
+    text-align:center;line-height:1.3;letter-spacing:0.06em;
+  }
+  .edu-degree{font-size:1.1rem;font-weight:600;color:var(--heading);margin-bottom:0.25rem}
+  .edu-school{color:var(--accent);font-size:0.88rem;font-family:'Space Mono',monospace;margin-bottom:0.4rem}
+  .edu-meta{font-size:0.82rem;color:var(--text3);display:flex;gap:1.2rem;flex-wrap:wrap}
+  .edu-gpa{color:var(--accent2);font-weight:500}
+
+  /* ── CERTIFICATIONS ── */
+  .certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+  .cert-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:1.1rem 1.3rem;
+    display:flex;align-items:flex-start;gap:0.8rem;
+    transition:border-color 0.2s;
+  }
+  .cert-card:hover{border-color:var(--border2)}
+  .cert-icon{
+    width:32px;height:32px;border-radius:6px;
+    background:var(--tag-bg);border:1px solid var(--tag-border);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;font-size:0.7rem;color:var(--accent);
+    font-family:'Space Mono',monospace;font-weight:700;
+  }
+  .cert-name{font-size:0.88rem;font-weight:500;color:var(--heading);line-height:1.4}
+  .cert-issuer{font-size:0.75rem;color:var(--text3);margin-top:0.15rem;font-family:'Space Mono',monospace}
+  .cert-footer{display:flex;align-items:center;gap:0.5rem;margin-top:0.4rem;flex-wrap:wrap}
+  .cert-status{
+    font-size:0.65rem;padding:0.15rem 0.5rem;border-radius:2rem;
+    background:rgba(255,211,42,0.08);border:1px solid rgba(255,211,42,0.2);
+    color:var(--yellow);display:inline-block;
+  }
+  .cert-status.done{
+    background:rgba(0,255,180,0.07);border-color:rgba(0,255,180,0.18);
+    color:var(--accent);
+  }
+  .cert-verify{
+    font-size:0.65rem;padding:0.15rem 0.55rem;border-radius:2rem;
+    background:rgba(0,201,255,0.07);border:1px solid rgba(0,201,255,0.18);
+    color:var(--accent2);text-decoration:none;
+    transition:background 0.2s,border-color 0.2s;
+    display:inline-flex;align-items:center;gap:0.2rem;
+  }
+  .cert-verify:hover{background:rgba(0,201,255,0.14);border-color:rgba(0,201,255,0.35)}
+
+  /* ── ACHIEVEMENTS ── */
+  .achievements-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+  .achievement{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:1.2rem 1.4rem;
+    display:flex;gap:1rem;align-items:flex-start;
+    transition:border-color 0.2s;
+  }
+  .achievement:hover{border-color:var(--border2)}
+  .ach-icon{
+    font-family:'Space Mono',monospace;
+    font-size:0.78rem;color:var(--yellow);
+    font-weight:700;flex-shrink:0;padding-top:0.1rem;
+  }
+  .ach-text{font-size:0.9rem;color:var(--text2);line-height:1.55}
+  .ach-text strong{color:var(--heading);font-weight:500}
+
+  /* ── CONTACT ── */
+  #contact{padding-bottom:4rem}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  .contact-intro{color:var(--text2);font-size:0.97rem;line-height:1.8;margin-bottom:1.2rem}
+  .contact-links{display:flex;flex-direction:column;gap:0.8rem;margin-top:1.5rem}
+  .contact-link{
+    display:flex;align-items:center;gap:0.8rem;
+    font-size:0.9rem;color:var(--text2);
+    text-decoration:none;
+    padding:0.7rem 1rem;
+    border-radius:6px;
+    border:1px solid var(--border);
+    background:var(--card);
+    transition:border-color 0.2s,color 0.2s;
+  }
+  .contact-link:hover{border-color:var(--border2);color:var(--accent)}
+  .contact-link-icon{
+    font-family:'Space Mono',monospace;
+    font-size:0.7rem;color:var(--accent);
+    font-weight:700;width:28px;text-align:center;
+  }
+  .contact-link-icon.htb{color:#9fef00}
+
+  /* ── THM BADGE ── */
+  .thm-badge-wrap{
+    margin-top:1.2rem;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    background:var(--card);
+    max-width:400px;
+  }
+  .thm-badge-wrap iframe{
+    display:block;
+    width:100%;
+    height:120px;
+    border:none;
+  }
+
+  .info-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:1.8rem;
+  }
+  .info-row{
+    display:flex;justify-content:space-between;
+    padding:0.6rem 0;
+    border-bottom:1px solid var(--border);
+    font-size:0.86rem;
+  }
+  .info-row:last-child{border-bottom:none}
+  .info-label{color:var(--text3);font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.06em}
+  .info-value{color:var(--text);text-align:right}
+  .info-value a{color:var(--accent);text-decoration:none}
+  .info-value a:hover{text-decoration:underline}
+  @media(max-width:700px){
+    .contact-grid{grid-template-columns:1fr}
+  }
+
+  /* ── FOOTER ── */
+  footer{
+    border-top:1px solid var(--border);
+    padding:2rem;
+    text-align:center;
+    font-family:'Space Mono',monospace;
+    font-size:0.72rem;
+    color:var(--text3);
+    letter-spacing:0.06em;
+  }
+  footer span{color:var(--accent)}
+
+  /* ── ANIMATIONS ── */
+  .fade-in{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
+  .fade-in.visible{opacity:1;transform:none}
+
+  /* ── MOBILE NAV ── */
+  @media(max-width:680px){
+    nav{padding:0.9rem 1.2rem}
+    .nav-links{gap:1rem}
+    .nav-links a{font-size:0.72rem}
+    section{padding:4rem 0}
+    .edu-card{flex-direction:column}
+    h1.hero-name{font-size:2.2rem}
+  }
+
+  /* ── DIVIDER ── */
+  .divider{
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--border),transparent);
+    margin:0;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">MR<span style="color:var(--text3)">_</span>N</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <div class="container">
+    <p class="hero-pre">IT Infrastructure &amp; Cybersecurity Portfolio</p>
+    <h1 class="hero-name">Manikanta Reddy Nanchary</h1>
+    <p class="hero-role">Data Center Infrastructure&nbsp;·&nbsp;Linux &amp; Networking&nbsp;·&nbsp;Cybersecurity</p>
+    <p class="hero-desc">
+      Final-year B.Tech Information Technology student who works across the full stack of infrastructure — from racking, cabling, and Junos CLI to SIEM triage and VAPT. Real-world SOC experience at a live government cyber unit (TGCSB – I4C, MHA), a Certified Intelligent Data Center (CIDCOM) credential covering power, cooling, and network architecture, and a global Top 2% TryHackMe ranking.
+    </p>
+    <div class="hero-badges">
+      <span class="badge purple">CIDCOM Certified — Data Center Ops</span>
+      <span class="badge">TryHackMe Top 2% Global</span>
+      <span class="badge">TGCSB – I4C, MHA Intern</span>
+      <span class="badge blue">AWS Certified Cloud Practitioner</span>
+      <span class="badge purple">SANS NetWars 6-Month Access</span>
+      <span class="badge blue">AWS Skills-to-Jobs CTF #99 &amp; #161</span>
+      <span class="badge orange">HackTheBox</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#experience" class="btn-outline">View Experience</a>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about">
+  <div class="container">
+    <p class="section-label fade-in">01 / Who I Am</p>
+    <h2 class="section-title fade-in">About Me</h2>
+    <div class="section-line fade-in"></div>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>I'm a <span>final-year B.Tech Information Technology</span> student at BVRIT, Hyderabad, working across <span>data center infrastructure, Linux systems, enterprise networking, and cybersecurity</span>. I'm equally comfortable racking and cabling hardware, configuring routers via Junos CLI, or triaging alerts in a SOC.</p>
+        <p>My most significant hands-on experience came from an <span>onsite internship at the Telangana Cyber Security Bureau (TGCSB – I4C, Ministry of Home Affairs)</span>, where I worked alongside professional analysts on live incidents, performed a real-world VAPT engagement at Vatins Systems Pvt. Ltd., and contributed to digital forensics investigations.</p>
+        <p>I recently completed the <span>Certified Intelligent Data Center – Operations &amp; Maintenance (CIDCOM)</span> program (IITM Pravartak / Vertiv), covering power systems, cooling, racks, structured cabling, and monitoring for live data center environments — and built infrastructure projects including an Active Directory/VPN lab and a self-hosted VoIP deployment with physical LAN cabling and hardware bridging.</p>
+        <p>Outside structured work, I actively compete in CTFs, grind TryHackMe and HackTheBox machines, and document everything I learn on GitHub. I believe in <span>responsible disclosure, continuous learning, and security with integrity.</span></p>
+      </div>
+      <div class="stats-grid fade-in">
+        <div class="stat-card">
+          <span class="stat-number">Top 2%</span>
+          <div class="stat-label">TryHackMe Global Rank</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">100+</span>
+          <div class="stat-label">Labs &amp; CTF Rooms Completed</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">6</span>
+          <div class="stat-label">Internships &amp; Industry Programs</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">#99</span>
+          <div class="stat-label">AWS / SANS Skills-to-Jobs CTF</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════ SKILLS ═══════════ -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label fade-in">02 / Capabilities</p>
+    <h2 class="section-title fade-in">Technical Skills</h2>
+    <div class="section-line fade-in"></div>
+    <div class="skills-container">
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">Data Center Infrastructure &amp; Operations (CIDCOM Certified)</div>
+        <div class="skill-tags">
+          <span class="stag purple">Power Distribution (UPS, PDU, ATS, Generators)</span>
+          <span class="stag purple">Cooling Systems (CRAC/CRAH, Hot/Cold Aisle)</span>
+          <span class="stag purple">Rack &amp; Structured Cabling (19"/Open Rack)</span>
+          <span class="stag purple">Network Architecture (Spine-Leaf, ToR)</span>
+          <span class="stag">DCIM / BMS Monitoring</span>
+          <span class="stag">Uptime Institute Tier Standards</span>
+          <span class="stag">Reliability Metrics (PUE, MTBF, MTTR)</span>
+        </div>
+      </div>
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">VAPT &amp; Offensive Security</div>
+        <div class="skill-tags">
+          <span class="stag accent">Burp Suite</span>
+          <span class="stag accent">Metasploit</span>
+          <span class="stag accent">Nmap / NSE</span>
+          <span class="stag accent">Nikto</span>
+          <span class="stag accent">SQLmap</span>
+          <span class="stag accent">OWASP ZAP</span>
+          <span class="stag">Hydra</span>
+          <span class="stag">John the Ripper</span>
+          <span class="stag">Hashcat</span>
+          <span class="stag">CyberChef</span>
+          <span class="stag">Privilege Escalation</span>
+          <span class="stag">OWASP Top 10</span>
+        </div>
+      </div>
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">SOC &amp; SIEM Operations</div>
+        <div class="skill-tags">
+          <span class="stag blue">Splunk</span>
+          <span class="stag blue">ELK Stack</span>
+          <span class="stag blue">Wazuh XDR/SIEM</span>
+          <span class="stag blue">Microsoft Sentinel</span>
+          <span class="stag blue">Palo Alto Cortex XDR</span>
+          <span class="stag blue">Google SecOps SOAR</span>
+          <span class="stag">Alert Triage</span>
+          <span class="stag">IOC Detection</span>
+          <span class="stag">Incident Response</span>
+          <span class="stag">MITRE ATT&amp;CK</span>
+        </div>
+      </div>
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">Forensics &amp; Threat Intelligence</div>
+        <div class="skill-tags">
+          <span class="stag purple">FTK Imager</span>
+          <span class="stag purple">MISP</span>
+          <span class="stag purple">VirusTotal</span>
+          <span class="stag purple">AbuseIPDB</span>
+          <span class="stag">OSINT</span>
+          <span class="stag">Dark Web Monitoring</span>
+          <span class="stag">Wireshark</span>
+          <span class="stag">Digital Evidence Handling</span>
+          <span class="stag">Malware Analysis (Basic)</span>
+        </div>
+      </div>
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">Vulnerability Assessment</div>
+        <div class="skill-tags">
+          <span class="stag accent">Nessus</span>
+          <span class="stag accent">OpenVAS</span>
+          <span class="stag">CVSS Scoring</span>
+          <span class="stag">Remediation Reporting</span>
+          <span class="stag">PortSwigger Labs</span>
+          <span class="stag">Network Enumeration</span>
+          <span class="stag">Android APK Testing</span>
+        </div>
+      </div>
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">Network &amp; Systems</div>
+        <div class="skill-tags">
+          <span class="stag">TCP/IP</span>
+          <span class="stag">DNS / DHCP</span>
+          <span class="stag">HTTP/S</span>
+          <span class="stag">Firewalls / IDS / IPS</span>
+          <span class="stag">Junos CLI (Router/Switch Config)</span>
+          <span class="stag">VPN Deployment (AWS EC2)</span>
+          <span class="stag">Kali Linux</span>
+          <span class="stag">Linux Hardening</span>
+          <span class="stag">Windows Server</span>
+          <span class="stag">Active Directory</span>
+          <span class="stag">Apache &amp; Python HTTP Servers/Listeners</span>
+          <span class="stag">Physical LAN Cabling &amp; Hardware Bridging</span>
+        </div>
+      </div>
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">Hardware Architecture &amp; Maintenance</div>
+        <div class="skill-tags">
+          <span class="stag">Laptops</span>
+          <span class="stag">Network Switches</span>
+          <span class="stag">Routers</span>
+          <span class="stag">Storage Devices</span>
+          <span class="stag">Assembly, Configuration &amp; Troubleshooting</span>
+        </div>
+      </div>
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">Cloud, Scripting &amp; Dev</div>
+        <div class="skill-tags">
+          <span class="stag blue">AWS Certified Cloud Practitioner</span>
+          <span class="stag blue">AWS (IAM, EC2, S3)</span>
+          <span class="stag blue">Zero Trust (Zscaler)</span>
+          <span class="stag">Python</span>
+          <span class="stag">Bash / Shell</span>
+          <span class="stag">PowerShell</span>
+          <span class="stag">Node.js</span>
+          <span class="stag">PostgreSQL</span>
+          <span class="stag">JWT / RBAC</span>
+          <span class="stag">Git / GitHub</span>
+        </div>
+      </div>
+
+      <div class="skill-group fade-in">
+        <div class="skill-group-title">CTF &amp; Practice Platforms</div>
+        <div class="skill-tags">
+          <span class="stag accent">TryHackMe — Top 2%</span>
+          <span class="stag orange">HackTheBox</span>
+          <span class="stag">PortSwigger Web Academy</span>
+          <span class="stag blue">SANS NetWars</span>
+          <span class="stag">AWS Skills-to-Jobs CTF</span>
+          <span class="stag">PicoCTF</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════ EXPERIENCE ═══════════ -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label fade-in">03 / Work History</p>
+    <h2 class="section-title fade-in">Internships &amp; Experience</h2>
+    <div class="section-line fade-in"></div>
+    <div class="timeline">
+
+      <div class="timeline-item fade-in">
+        <div class="tl-header">
+          <div class="tl-role">Cyber Security Intern</div>
+          <div class="tl-company">Amroha Police, Uttar Pradesh</div>
+          <div class="tl-meta">
+            <span>Jun 2026</span>
+            <span class="tl-badge onsite">Onsite</span>
+            <span class="tl-badge">Law Enforcement</span>
+          </div>
+        </div>
+        <ul class="tl-list">
+          <li>Investigated OSINT sources and threat-intelligence indicators supporting live SOC operations, mobile forensics, and malware-analysis case studies; applied reconnaissance techniques to bug-bounty and cyber-law reviews.</li>
+          <li>Practiced SIEM alert triage, mobile forensic acquisition, and digital evidence handling procedures alongside senior investigators.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="tl-header">
+          <div class="tl-role">Cyber Security &amp; Digital Forensics Intern</div>
+          <div class="tl-company">Telangana Cyber Security Bureau (TGCSB – I4C, Ministry of Home Affairs)</div>
+          <div class="tl-meta">
+            <span>Jan 2026 – Mar 2026</span>
+            <span class="tl-badge onsite">Onsite · Hyderabad</span>
+            <span class="tl-badge">Government · Live Environment</span>
+          </div>
+        </div>
+        <ul class="tl-list">
+          <li>Operated Wazuh SIEM (server + agent deployment) to monitor and analyze security alerts across a live government network environment — installed, configured, and troubleshot agents across Windows, Linux, and network systems.</li>
+          <li>Was present alongside the SOC team during a live DoS attack, observing how analysts examined raw logs from affected systems in real time — including event correlation, attack pattern identification, and traffic anomaly triage — cutting incident-correlation time by 25% through structured log analysis.</li>
+          <li>Performed alert investigation workflows: categorized events, validated true/false positives, escalated appropriately following government SOPs.</li>
+          <li>Assisted in live cybercrime investigation casework, applying evidence acquisition (FTK Imager) and IOC correlation (MISP) procedures alongside OSINT and dark-web monitoring for threat intelligence.</li>
+          <li>Executed a 1-week onsite VAPT engagement at Vatins Systems Pvt. Ltd. — discovered and documented real CVEs including Shellshock, LFI, and SQL injection with CVSS-based risk ratings, delivering a structured report for client review.</li>
+          <li>Explored Google SecOps SOAR platform; prepared structured investigation reports under supervisor review.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="tl-header">
+          <div class="tl-role">JNCIA-Junos Associate — Networking Intern</div>
+          <div class="tl-company">Juniper Networks (AICTE / Eduskills)</div>
+          <div class="tl-meta">
+            <span>Nov 2025 – Jan 2026</span>
+            <span class="tl-badge">Virtual</span>
+          </div>
+        </div>
+        <ul class="tl-list">
+          <li>Configured and troubleshot routers and switches using Junos CLI; built LAN topologies, VLAN segmentation, and firewall filter rules — hands-on exposure to network installation, configuration, and troubleshooting workflows.</li>
+          <li>Deepened understanding of TCP/IP stack, DNS, and network device behavior to support effective log analysis and network-layer security assessment.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="tl-header">
+          <div class="tl-role">Cybersecurity &amp; Digital Forensics Intern</div>
+          <div class="tl-company">Cyber Secured India (3 months)</div>
+          <div class="tl-meta">
+            <span>Apr – Jun 2025</span>
+            <span class="tl-badge">Virtual</span>
+          </div>
+        </div>
+        <ul class="tl-list">
+          <li>Conducted full-cycle VAPT exercises across Windows, Linux, and Android environments: active reconnaissance, Nmap scanning (NSE scripting), vulnerability identification, privilege escalation.</li>
+          <li>Performed Android application security testing using DIVA app and APK analysis — identified insecure storage, improper authentication, and injection vulnerabilities.</li>
+          <li>Delivered structured, risk-rated reports with vulnerability findings, CVSS risk ratings, and remediation recommendations, communicating findings directly for client review.</li>
+          <li>Practiced SQLi, CSRF, SSTI, MITM/ARP poisoning, Wi-Fi attacks, and packet capture analysis with Wireshark.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="tl-header">
+          <div class="tl-role">Cybersecurity Intern</div>
+          <div class="tl-company">Palo Alto Networks (AICTE / Eduskills – 10 weeks)</div>
+          <div class="tl-meta">
+            <span>Jan – Mar 2025</span>
+            <span class="tl-badge">Virtual</span>
+          </div>
+        </div>
+        <ul class="tl-list">
+          <li>Performed SOC-style security alert monitoring, analyzed security events, and practiced end-to-end incident response workflows in enterprise lab environments.</li>
+          <li>Reviewed and categorized alerts from firewalls and monitoring tools; supported true/false positive validation and escalation procedures.</li>
+          <li>Implemented firewall policies, security configurations, and compliance reporting; developed an automated incident response playbook on Cortex XDR.</li>
+          <li>Trained in Cloud Security, Network Security, and SOC Fundamentals (Cortex XDR, Shared Responsibility Model, EDR concepts).</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="tl-header">
+          <div class="tl-role">Zero Trust Cyber Associate Intern</div>
+          <div class="tl-company">Zscaler (AICTE / Eduskills – 8 weeks)</div>
+          <div class="tl-meta">
+            <span>Jan – Mar 2025</span>
+            <span class="tl-badge">Virtual</span>
+          </div>
+        </div>
+        <ul class="tl-list">
+          <li>Implemented Zero Trust principles in lab environments: least-privilege access, continuous verification, micro-segmentation.</li>
+          <li>Studied Zscaler Zero Trust Exchange vs. traditional VPN/firewall models; configured policy enforcement flows and identity-based access controls.</li>
+          <li>Evaluated telemetry for policy tuning and threat detection within cloud-native security architectures.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════ PROJECTS ═══════════ -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label fade-in">04 / What I've Built</p>
+    <h2 class="section-title fade-in">Projects</h2>
+    <div class="section-line fade-in"></div>
+    <div class="projects-grid">
+
+      <div class="project-card fade-in">
+        <div class="project-title">SOC Automation Playbook — Auto-Containment</div>
+        <div class="project-tech">Palo Alto Cortex XDR · YAML · Unit42 Managed Services</div>
+        <p class="project-desc">Designed and deployed a production-ready automated incident response playbook on Cortex XDR for zero-touch phishing and malware containment. Configured multi-condition automation trigger rules matching malicious email indicators (.exe, .dll, .bat, .ps1; phishing tags; severity levels). Implemented ParseEmailFilesV2 for structured IOC extraction (SHA256, URLs, attachment metadata) and isolate-endpoint script for immediate EDR-based network isolation. Built dual-verification decision logic to prevent false positive containment. Exported as portable .yml for version control and audit readiness.</p>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-title">IT Infrastructure Lab — Active Directory, VPN &amp; Network Setup</div>
+        <div class="project-tech">VirtualBox · Windows Server 2025 · AWS EC2 · Cisco Packet Tracer</div>
+        <p class="project-desc">Built a complete AD domain environment (bvrit.local) with Windows Server 2025 (DC), Windows 11 (client), and Kali Linux — configured users, groups, shared folders, and GPOs. Performed BloodHound/SharpHound Active Directory enumeration. Deployed a VPN server on AWS EC2 with inbound/outbound security group configuration. Designed a multi-segment LAN in Cisco Packet Tracer with VLANs, routers, switches, and validated connectivity via ping, tracert, and DNS resolution tests.</p>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-title">VoIP Communications Lab</div>
+        <div class="project-tech">Asterisk · Ubuntu · VMware · TP-Link USB Wi-Fi Adapter</div>
+        <p class="project-desc">Deployed a self-hosted VoIP server using Asterisk on Ubuntu (VMware VM), physically bridging it onto the college LAN via a TP-Link N722 USB Wi-Fi adapter. Configured SIP extensions and completed test calls between a laptop softphone and Linphone on mobile — hands-on exposure to hardware bridging, LAN deployment, and VoIP/SIP protocols.</p>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-title">JustDoCyber — Secure Cybersecurity Quiz Platform</div>
+        <div class="project-tech">Node.js · Express.js · PostgreSQL · JWT · Gemini Pro API · Linux</div>
+        <p class="project-desc">Developed a full-stack secure web application with JWT authentication, Role-Based Access Control (RBAC), and OWASP-aligned input validation. Implemented API hardening, rate-limit handling, audit-friendly logging, and secure session management. Integrated AI-based quiz generation using Gemini Pro API with retry logic and robust error handling. Deployed and hardened on a Linux server; maintained documentation and version control on GitHub.</p>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-title">Personal Security Tools &amp; Automation Repository</div>
+        <div class="project-tech">Python · Bash · Linux · GitHub</div>
+        <p class="project-desc">Maintaining a public GitHub repository of personal security tools, automation scripts (Python, Bash), and lab notes for command reuse, productivity, and future reference. Scripts include log parsers, enumeration helpers, and CTF utilities built from real-world learning and competition experience.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════ EDUCATION ═══════════ -->
+<section id="education">
+  <div class="container">
+    <p class="section-label fade-in">05 / Academic Background</p>
+    <h2 class="section-title fade-in">Education</h2>
+    <div class="section-line fade-in"></div>
+    <div class="edu-card fade-in">
+      <div class="edu-icon">B.<br>TECH</div>
+      <div>
+        <div class="edu-degree">B.Tech in Information Technology (Cybersecurity)</div>
+        <div class="edu-school">Padmasri Dr. B.V. Raju Institute of Technology (BVRIT), Medak, Telangana</div>
+        <div class="edu-meta">
+          <span>Aug 2023 – Present (Final Year, 2027 Batch)</span>
+          <span class="edu-gpa">CGPA: 8.17 / 10</span>
+        </div>
+        <div style="margin-top:0.8rem;display:flex;flex-wrap:wrap;gap:0.4rem">
+          <span class="stag">Cybersecurity Specialization</span>
+          <span class="stag accent">Network Security</span>
+          <span class="stag accent">Web Application Security</span>
+          <span class="stag">Digital Forensics</span>
+          <span class="stag blue">Cloud Security</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════ CERTIFICATIONS ═══════════ -->
+<section id="certifications">
+  <div class="container">
+    <p class="section-label fade-in">06 / Credentials</p>
+    <h2 class="section-title fade-in">Certifications &amp; Training</h2>
+    <div class="section-line fade-in"></div>
+    <div class="certs-grid">
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">CDC</div>
+        <div>
+          <div class="cert-name">Certified Intelligent Data Center – Operations &amp; Maintenance (CIDCOM)</div>
+          <div class="cert-issuer">IITM Pravartak, in partnership with Vertiv (CSR Partner)</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">AWS</div>
+        <div>
+          <div class="cert-name">AWS Certified Cloud Practitioner</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">ZSC</div>
+        <div>
+          <div class="cert-name">Introduction to Networking for Cyber Professionals</div>
+          <div class="cert-issuer">Zscaler Academy · Valid Mar 2026 – Mar 2029</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+            <a class="cert-verify" href="https://verify.skilljar.com/c/yferz55ws9vd" target="_blank" rel="noopener">Verify ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">CEH</div>
+        <div>
+          <div class="cert-name">Certified Ethical Hacker (CEH v13 AI) Practical</div>
+          <div class="cert-issuer">EC-Council · Score 10/20</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">GCP</div>
+        <div>
+          <div class="cert-name">Google Cybersecurity Professional Certificate</div>
+          <div class="cert-issuer">Google / Coursera — Linux, Python, MySQL, SIEM (8 courses)</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+            <a class="cert-verify" href="https://coursera.org/verify/professional-cert/N883D5NUXN9N" target="_blank" rel="noopener">Verify ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">THM</div>
+        <div>
+          <div class="cert-name">TryHackMe — Jr. Penetration Tester, SOC, Forensics Paths</div>
+          <div class="cert-issuer">TryHackMe · Top 2% Global · 100+ Rooms</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">CDAC</div>
+        <div>
+          <div class="cert-name">Windows Forensic Analysis Bootcamp</div>
+          <div class="cert-issuer">CDAC · Sep – Oct 2025</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">ZSC</div>
+        <div>
+          <div class="cert-name">Fundamentals of Cybersecurity (EDU-102) + Zero Trust Workshop</div>
+          <div class="cert-issuer">Zscaler Academy · 2-day Instructor-led</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">CNA</div>
+        <div>
+          <div class="cert-name">Introduction to Cybersecurity, Cybersecurity Essentials &amp; Networking Basics</div>
+          <div class="cert-issuer">Cisco NetAcad</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">NPT</div>
+        <div>
+          <div class="cert-name">Joy of Computing with Python | Programming in Modern C++</div>
+          <div class="cert-issuer">NPTEL</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">PAL</div>
+        <div>
+          <div class="cert-name">Cloud, Network &amp; SOC Security Fundamentals</div>
+          <div class="cert-issuer">Palo Alto Networks (AICTE / Eduskills)</div>
+          <div class="cert-footer">
+            <span class="cert-status done">Completed</span>
+            <a class="cert-verify" href="https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=d2c36de0f87999604913bb8b0dd9ac3f" target="_blank" rel="noopener">Verify ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════ ACHIEVEMENTS ═══════════ -->
+<section id="achievements">
+  <div class="container">
+    <p class="section-label fade-in">07 / Recognition</p>
+    <h2 class="section-title fade-in">Achievements &amp; Competitions</h2>
+    <div class="section-line fade-in"></div>
+    <div class="achievements-list">
+
+      <div class="achievement fade-in">
+        <div class="ach-icon">★</div>
+        <div class="ach-text"><strong>AWS Skills-to-Jobs CTF (SANS Institute)</strong> — Achieved ranks <strong>#99 and #161</strong> in a global-level cybersecurity competition. Awarded <strong>6-month SANS NetWars access</strong>.</div>
+      </div>
+
+      <div class="achievement fade-in">
+        <div class="ach-icon">★</div>
+        <div class="ach-text"><strong>TryHackMe Top 2% Global</strong> — Ranked in the global top 2% across <strong>100+ completed rooms</strong> covering SOC, Penetration Testing, and Digital Forensics paths.</div>
+      </div>
+
+      <div class="achievement fade-in">
+        <div class="ach-icon">★</div>
+        <div class="ach-text"><strong>HackTheBox</strong> — Active machine solver with hands-on experience across Linux and Windows boxes, covering privilege escalation, web exploitation, and CTF-style challenges.</div>
+      </div>
+
+      <div class="achievement fade-in">
+        <div class="ach-icon">★</div>
+        <div class="ach-text"><strong>CDAC BOSS Bug Bounty Program</strong> — Applied binary analysis and reverse-engineering techniques to identify vulnerabilities on BOSS (Bharat Operating System Solutions), a Linux-based OS.</div>
+      </div>
+
+      <div class="achievement fade-in">
+        <div class="ach-icon">★</div>
+        <div class="ach-text"><strong>Advanced Cybersecurity Workshop</strong> — 2-day hands-on security workshop at <strong>IIT Hyderabad, Tinker's Lab</strong> (Technobytes 2024).</div>
+      </div>
+
+      <div class="achievement fade-in">
+        <div class="ach-icon">★</div>
+        <div class="ach-text"><strong>Hackfiniti National Hackathon</strong> — Participant in a 24-hour national-level hackathon.</div>
+      </div>
+
+      <div class="achievement fade-in">
+        <div class="ach-icon">★</div>
+        <div class="ach-text"><strong>Techthon 2024</strong> — College-level shortlist for the Referral Hub project, applying technical knowledge to an innovative solution.</div>
+      </div>
+
+      <div class="achievement fade-in">
+        <div class="ach-icon">★</div>
+        <div class="ach-text"><strong>IEEE MTT-S BVRIT Certificate of Merit</strong> — Recognized for outstanding technical knowledge in the Student Chapter Quiz.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label fade-in">08 / Let's Connect</p>
+    <h2 class="section-title fade-in">Contact</h2>
+    <div class="section-line fade-in"></div>
+    <div class="contact-grid">
+      <div class="fade-in">
+        <p class="contact-intro">
+          I'm actively seeking <strong style="color:var(--heading)">Data Center Technician, Security Analyst, SOC Analyst, and VAPT roles</strong> as a 2027 fresher. Whether you're looking to hire, collaborate on research, or discuss anything infrastructure or cybersecurity — reach out.
+        </p>
+        <p class="contact-intro">Open to full-time roles, internship extensions, and freelance security assessments.</p>
+        <div class="contact-links">
+          <a href="mailto:manikantareddy.n.1@gmail.com" class="contact-link">
+            <span class="contact-link-icon">@</span>
+            manikantareddy.n.1@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/manikantareddyn/" target="_blank" class="contact-link">
+            <span class="contact-link-icon">in</span>
+            www.linkedin.com/in/manikantareddyn
+          </a>
+          <a href="https://github.com/manikantareddyn" target="_blank" class="contact-link">
+            <span class="contact-link-icon">&lt;/&gt;</span>
+            github.com/manikantareddyn
+          </a>
+          <a href="https://tryhackme.com/p/ManikantaReddy" target="_blank" class="contact-link">
+            <span class="contact-link-icon">THM</span>
+            TryHackMe — Top 2% Global
+          </a>
+          <a href="https://app.hackthebox.com/public/users/2636203" target="_blank" class="contact-link">
+            <span class="contact-link-icon htb">HTB</span>
+            HackTheBox Profile
+          </a>
+        </div>
+        <!-- TryHackMe Live Badge -->
+        <div class="thm-badge-wrap" style="margin-top:1.4rem">
+          <iframe
+            src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2855948"
+            title="TryHackMe Badge"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="info-card fade-in">
+        <div class="info-row">
+          <span class="info-label">Location</span>
+          <span class="info-value">Hyderabad, Telangana, India</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Phone</span>
+          <span class="info-value">+91 73868 50193</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Graduation</span>
+          <span class="info-value">April 2027 (B.Tech IT)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Specialization</span>
+          <span class="info-value">Data Center Infrastructure &amp; Cybersecurity</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">CEH Practical</span>
+          <span class="info-value" style="color:var(--accent)">Completed (10/20)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Availability</span>
+          <span class="info-value" style="color:var(--accent)">Open to Opportunities</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Work Type</span>
+          <span class="info-value">Full-time / Hybrid / Remote</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Portfolio Live</span>
+          <span class="info-value"><a href="https://portfolio-5uj6.onrender.com" target="_blank">portfolio-5uj6.onrender.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <span>Manikanta Reddy Nanchary</span> &nbsp;·&nbsp; Data Center Infrastructure &amp; Cybersecurity Portfolio &nbsp;·&nbsp; Hyderabad, India &nbsp;·&nbsp; 2026
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 0.07 + 's';
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
